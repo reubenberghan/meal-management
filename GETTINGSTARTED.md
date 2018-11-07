@@ -31,7 +31,7 @@ yarn add -D husky --force
 Add app dependencies and utilities:
 
 ```
-yarn add ramda ramda-adjunct styled-components react-router redux react-redux redux-observable rxjs rxjs-compat redux-devtools-extension reselect
+yarn add ramda ramda-adjunct styled-components styled-normalize react-router redux react-redux redux-observable rxjs rxjs-compat redux-devtools-extension reselect
 ```
 
 Update the `package.json` as follows:

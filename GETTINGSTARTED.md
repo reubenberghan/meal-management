@@ -31,18 +31,15 @@ yarn add -D husky --force
 Add app dependencies and utilities:
 
 ```
-yarn add ramda ramda-adjunct styled-components styled-normalize react-router redux react-redux redux-observable rxjs rxjs-compat redux-devtools-extension reselect
+yarn add ramda ramda-adjunct styled-components styled-normalize react-router redux react-redux redux-observable rxjs rxjs-compat redux-devtools-extension reselect react-helmet
 ```
 
 Update the `package.json` as follows:
 
 ```
-"lint-staged": {
-  "linters": {
-    "src/**/*.js": [
-      "prettier-standard",
-      "git add"
-    ]
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged"
   }
 },
 "jest": {
@@ -59,6 +56,14 @@ Update the `package.json` as follows:
     "enzyme-to-json/serializer"
   ]
 },
+"lint-staged": {
+  "linters": {
+    "src/**/*.js": [
+      "prettier-standard",
+      "git add"
+    ]
+  }
+},
 "scripts": {
   "build": "react-scripts build",
   "coverage": "react-scripts test --env=jsdom --coverage",
@@ -67,10 +72,5 @@ Update the `package.json` as follows:
   "precommit": "lint-staged",
   "start": "react-scripts start",
   "test": "react-scripts test --env=jsdom"
-},
-"husky": {
-  "hooks": {
-    "pre-commit": "lint-staged"
-  }
 }
 ```

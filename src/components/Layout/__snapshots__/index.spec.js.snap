@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components:Layout should render the Layout Meal Management prefixed by title prop when given 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      About - Meal Management
+    </title>
+  </HelmetWrapper>
+</Fragment>
+`;
+
+exports[`components:Layout should render the Layout with Meal Management when no title prop 1`] = `
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Meal Management
+    </title>
+  </HelmetWrapper>
+</Fragment>
+`;

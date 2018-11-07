@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components:App should render the App component and CSS properties properly 1`] = `
+<div>
+  <h1>
+    Meal Management App
+  </h1>
+</div>
+`;

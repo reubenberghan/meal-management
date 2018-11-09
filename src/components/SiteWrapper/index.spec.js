@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 
-import App from '.'
+import SiteWrapper from '.'
 
 describe('components:App', () => {
   it('should render the App component and CSS properties properly', () => {
-    expect(toJson(shallow(<App />))).toMatchSnapshot()
+    expect(toJson(shallow(<SiteWrapper />))).toMatchSnapshot()
   })
 })

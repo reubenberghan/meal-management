@@ -4,12 +4,12 @@ import { render } from 'react-dom'
 
 import * as serviceWorker from './serviceWorker'
 
-import App from './components/App'
+import SiteWrapper from './components/SiteWrapper'
 import GlobalStyle from './styles'
 
 render(
   <Fragment>
-    <App />
+    <SiteWrapper />
     <GlobalStyle />
   </Fragment>,
   document.getElementById('root')

@@ -5,12 +5,12 @@ import Footer from '../../components/Layout/Footer'
 import Header from '../../components/Layout/Header'
 import Main from '../../components/Layout/Main'
 
-export default function Home () {
+export default function Recipes () {
   return (
     <Layout>
       <Header />
       <Main>
-        <p>This is the home page.</p>
+        <p>This is the Recipes page.</p>
       </Main>
       <Footer />
     </Layout>

@@ -5,3 +5,7 @@ export function getPathname ({ router: { location: { pathname } = {} } = {} }) {
 export function getSearch ({ router: { location: { search } = {} } = {} }) {
   return search
 }
+
+export function getRecipes ({ recipes }) {
+  return recipes
+}

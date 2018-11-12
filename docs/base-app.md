@@ -68,11 +68,147 @@ Main
 
 ### SiteWrapper (App)
 
+The `SiteWrapper` component initialises the app.
+
+This is where we `import` and create instances of the top level dependencies that we need throughout the app. These include our state management, routing, middleware and anything else that needs to added to the root of the app component tree such as a GraphQl provider.
+
+For example:
+
+```
+src/components/SiteWrapper/index.js
+```
+
+```
+import * as React from 'react'
+import {
+  ConnectedRouter,
+  connectRouter,
+  routerMiddleware
+} from 'connected-react-router'
+import { applyMiddleware, compose, createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { createEpicMiddleware } from 'redux-observable'
+import { ApolloProvider } from 'react-apollo'
+
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { ApolloClient } from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { createBrowserHistory } from 'history'
+
+import { initialState } from '../../state/constants'
+import rootEpic from '../../state/epics'
+import rootReducer from '../../state/reducers/root'
+import Switchboard from '../Switchboard'
+
+const epicMiddleware = createEpicMiddleware()
+const history = createBrowserHistory()
+const appliedMiddleware = applyMiddleware(
+  epicMiddleware,
+  routerMiddleware(history)
+)
+const devTools =
+  typeof window !== 'undefined' &&
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__()
+const middleware = devTools
+  ? compose(
+    appliedMiddleware,
+    devTools
+  )
+  : compose(appliedMiddleware)
+const store = createStore(
+  connectRouter(history)(rootReducer),
+  initialState,
+  middleware
+)
+
+epicMiddleware.run(rootEpic)
+
+const httpLink = new HttpLink({
+  uri: 'http://localhost:4000/graphql'
+})
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache()
+})
+
+export default function SiteWrapper () {
+  return (
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <ApolloProvider client={client}>
+          <Switchboard />
+        </ApolloProvider>
+      </ConnectedRouter>
+    </Provider>
+  )
+}
+```
+
 ### Switchboard (routing)
+
+The `Switchboard` component manages the app routing.
+
+All of the app pages and paths get imported and mapped here.
+
+For example:
+
+```
+src/components/Switchboard/index.sj
+```
+
+```
+import * as React from 'react'
+import { Route, Switch } from 'react-router'
+
+import {
+  ABOUT_PATH,
+  HOME_PATH,
+  RECIPES_PATH,
+  SIGN_IN_PATH
+} from '../../state/constants'
+import About from '../../pages/About'
+import Home from '../../pages/Home'
+import Recipes from '../../pages/Recipes'
+import SignIn from '../../pages/SignIn'
+
+export default function SwitchBoard () {
+  return (
+    <Switch>
+      <Route exact path={ABOUT_PATH} component={About} />
+      <Route exact path={HOME_PATH} component={Home} />
+      <Route exact path={RECIPES_PATH} component={Recipes} />
+      <Route exact path={SIGN_IN_PATH} component={SignIn} />
+    </Switch>
+  )
+}
+```
 
 ## gql
 
+This directory contains any GraphQl queries that the app uses, for example `recipes.graphql`.
+
 ## state
+
+Depending on the state management solution this directory contains the necessary code to manage the client app's state.
+
+Using a Redux implementation we generally have top level directories for actions, reducers, and selectors as well as a top level file for any state constants.
+
+This might look like:
+
+```
+state
+  | - actions
+  |     | - index.js
+  | - epics
+  |     | - directory and index.js for each epic
+  | - reducers
+  |     | - directory and index.js for each reducer
+  | - selectors
+  |     | - index.js
+  | - constants.js
+```
 
 ## Base pages
 

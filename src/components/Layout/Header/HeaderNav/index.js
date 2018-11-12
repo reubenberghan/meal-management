@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
 const HeaderNav = styled.nav`
-  > span,
-  a {
-    margin: 0 1rem;
-    padding-bottom: 0.5rem;
-  }
+  align-self: center;
+  flex-grow: 1;
+  flex-shrink: 0;
 `
 
 HeaderNav.displayName = 'HeaderNav'

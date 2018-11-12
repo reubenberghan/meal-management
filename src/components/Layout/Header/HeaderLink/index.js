@@ -3,21 +3,23 @@ import styled from 'styled-components'
 
 const Placeholder = styled.span`
   border-bottom: 2px solid #f3f3f3;
-  font-size: 1.2rem;
-  font-weight: bold;
   cursor: default;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  padding-bottom: 0.5rem;
 `
 
 Placeholder.displayName = 'PlaceholderHeaderStyle'
 
 const Link = styled.a`
-  color: #f3f3f3;
+  color: #d7d8da;
   font-size: 1.2rem;
+  margin: 0 1rem;
+  padding-bottom: 0.5rem;
   text-decoration: none;
 
   &:hover {
     border-bottom: 2px solid #d7d8da;
-    color: #d7d8da;
   }
 `
 

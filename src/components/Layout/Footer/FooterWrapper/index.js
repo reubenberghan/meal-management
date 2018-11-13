@@ -5,7 +5,7 @@ const FooterWrapper = styled.footer`
   background-color: #7f8084;
   color: #f3f3f3;
   display: flex;
-  height: 5rem;
+  grid-area: foot;
 `
 
 FooterWrapper.displayName = 'FooterWrapper'

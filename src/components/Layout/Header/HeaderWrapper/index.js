@@ -5,7 +5,7 @@ const HeaderWrapper = styled.header`
   background-color: #7f8084;
   color: #f3f3f3;
   display: flex;
-  height: 5rem;
+  grid-area: head;
 `
 
 HeaderWrapper.displayName = 'HeaderWrapper'

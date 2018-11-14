@@ -6,5 +6,5 @@ import rootReducer from './root'
 export default history =>
   combineReducers({
     router: connectRouter(history),
-    rootReducer
+    root: rootReducer
   })

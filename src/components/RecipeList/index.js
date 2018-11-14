@@ -1,12 +1,12 @@
-import * as React from 'react'
-import { map } from 'ramda'
+import { connect } from 'react-redux'
 
-import Recipe from './Recipe'
+import { getRecipes } from '../../state/selectors'
+import Recipes from './Recipes'
 
-export default function RecipeList ({ recipes = [] }) {
-  return (
-    <div>
-      {map(({ id, title }) => <Recipe key={id} title={title} />, recipes)}
-    </div>
-  )
+function mapStateToProps (state) {
+  return {
+    recipes: getRecipes(state)
+  }
 }
+
+export default connect(mapStateToProps)(Recipes)

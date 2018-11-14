@@ -6,17 +6,12 @@ import Header from '../../components/Layout/Header'
 import Main from '../../components/Layout/Main'
 import RecipeList from '../../components/RecipeList'
 
-import { initialState } from '../../state/constants'
-import { getRecipes } from '../../state/selectors'
-
-const recipes = getRecipes(initialState)
-
 export default function Recipes () {
   return (
     <Layout>
       <Header />
       <Main>
-        <RecipeList recipes={recipes} />
+        <RecipeList />
       </Main>
       <Footer />
     </Layout>

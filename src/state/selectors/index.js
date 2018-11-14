@@ -6,6 +6,6 @@ export function getSearch ({ router: { location: { search } = {} } = {} }) {
   return search
 }
 
-export function getRecipes ({ recipes }) {
+export function getRecipes ({ root: { recipes } = {} }) {
   return recipes
 }

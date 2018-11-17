@@ -24,7 +24,8 @@
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
     "styled-components": "^4.0.3",
-    "styled-normalize": "^8.0.3"
+    "styled-normalize": "^8.0.3",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "enzyme": "^3.7.0",

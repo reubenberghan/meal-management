@@ -1,4 +1,8 @@
 // Actions
+export const RECIPE_ADDED = '@@recipes/RECIPE_ADDED'
+export const TITLE_CHANGED = '@@addRecipe/TITLE_CHANGED'
+export const INGREDIENT_CHANGED = '@@addRecipe/INGREDIENT_CHANGED'
+export const STEP_CHANGED = '@@addRecipe/STEP_CHANGED'
 
 // Paths
 export const ABOUT_PATH = '/about'
@@ -28,11 +32,11 @@ export const initialState = {
       steps: [
         {
           id: 'abe',
-          content: 'Peel banana'
+          step: 'Peel banana'
         },
         {
           id: 'abf',
-          content: 'Mix ingredients'
+          step: 'Mix ingredients'
         }
       ]
     },
@@ -52,11 +56,11 @@ export const initialState = {
       steps: [
         {
           id: 'abi',
-          content: 'Slice cheese'
+          step: 'Slice cheese'
         },
         {
           id: 'abj',
-          content: 'Toast bread'
+          step: 'Toast bread'
         }
       ]
     }

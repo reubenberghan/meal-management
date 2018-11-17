@@ -1,5 +1,6 @@
 import {
   INGREDIENT_CHANGED,
+  RECIPE_ADDED,
   STEP_CHANGED,
   TITLE_CHANGED
 } from '../../constants'
@@ -17,6 +18,8 @@ export default function addRecipe (state = initialState, { type, payload }) {
         ...state,
         ingredient: payload.ingredient
       }
+    case RECIPE_ADDED:
+      return initialState
     case STEP_CHANGED:
       return {
         ...state,

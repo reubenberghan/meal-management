@@ -1,6 +1,7 @@
 import {
   INGREDIENT_CHANGED,
   RECIPE_ADDED,
+  RECIPE_SUBMITTED,
   STEP_CHANGED,
   TITLE_CHANGED
 } from '../constants'
@@ -11,6 +12,12 @@ export function recipeAdded (recipe) {
     payload: {
       recipe
     }
+  }
+}
+
+export function recipeSubmitted () {
+  return {
+    type: RECIPE_SUBMITTED
   }
 }
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import {
   ingredientChanged,
-  recipeAdded,
+  recipeSubmitted,
   titleChanged,
   stepChanged
 } from '../../state/actions'
@@ -71,7 +71,7 @@ function mapDispatchToProps (dispatch) {
     handleSubmit: event => {
       event.preventDefault()
 
-      dispatch(recipeAdded())
+      dispatch(recipeSubmitted())
     },
     handleTitleChange: event => dispatch(titleChanged(event.target.value))
   }

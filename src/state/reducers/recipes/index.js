@@ -1,6 +1,6 @@
 import { initialState } from '../../constants'
 
-export default function reducer (state = initialState, { type, payload }) {
+export default function recipes (state = initialState, { type, payload }) {
   switch (type) {
     default:
       return state

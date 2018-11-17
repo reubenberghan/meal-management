@@ -6,7 +6,7 @@ import Recipe from '../Recipe'
 export default function Recipes ({ recipes = [] }) {
   return (
     <div>
-      {map(({ id, title }) => <Recipe key={id} title={title} />, recipes)}
+      {map(({ id, ...recipe }) => <Recipe key={id} {...recipe} />, recipes)}
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 
 import {
   ingredientChanged,
@@ -8,6 +9,22 @@ import {
   stepChanged
 } from '../../state/actions'
 import { getIngredient, getStep, getTitle } from '../../state/selectors'
+
+const AddRecipeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  > form {
+    display: flex;
+    flex-direction: column;
+
+    > label {
+      margin-bottom: 1.2rem;
+    }
+  }
+`
+
+AddRecipeWrapper.displayName = 'AddRecipeWrapper'
 
 function AddRecipe ({
   handleIngredientChange,
@@ -18,8 +35,12 @@ function AddRecipe ({
   step,
   title
 }) {
+  const titleInput = React.createRef()
+  const ingredientInput = React.createRef()
+  const stepInput = React.createRef()
+
   return (
-    <div>
+    <AddRecipeWrapper>
       <h2>Add a recipe</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor='title'>
@@ -29,6 +50,7 @@ function AddRecipe ({
             name='title'
             onChange={handleTitleChange}
             value={title}
+            ref={titleInput}
           />
         </label>
         <label htmlFor='ingredient'>
@@ -38,6 +60,7 @@ function AddRecipe ({
             name='ingredient'
             onChange={handleIngredientChange}
             value={ingredient}
+            ref={ingredientInput}
           />
         </label>
         <label htmlFor='step'>
@@ -47,11 +70,12 @@ function AddRecipe ({
             name='step'
             onChange={handleStepChange}
             value={step}
+            ref={stepInput}
           />
         </label>
         <input type='submit' value='Add Recipe' />
       </form>
-    </div>
+    </AddRecipeWrapper>
   )
 }
 

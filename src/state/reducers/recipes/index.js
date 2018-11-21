@@ -1,4 +1,5 @@
-import { RECIPE_ADDED } from '../../constants'
+import { RECIPE_ADDED, TITLE_UPDATED } from '../../constants'
+import setRecipeTitle from '../../domain/setRecipeTitle'
 
 const initialState = [
   {
@@ -60,6 +61,8 @@ export default function recipes (state = initialState, { type, payload }) {
         },
         ...state
       ]
+    case TITLE_UPDATED:
+      return setRecipeTitle(state, payload)
     default:
       return state
   }

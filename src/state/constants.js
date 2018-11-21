@@ -2,6 +2,7 @@
 export const RECIPE_ADDED = '@@recipes/RECIPE_ADDED'
 export const RECIPE_SUBMITTED = '@@recipes/RECIPE_SUBMITTED'
 export const TITLE_CHANGED = '@@addRecipe/TITLE_CHANGED'
+export const TITLE_UPDATED = '@@recipes/TITLE_UPDATED'
 export const INGREDIENT_CHANGED = '@@addRecipe/INGREDIENT_CHANGED'
 export const STEP_CHANGED = '@@addRecipe/STEP_CHANGED'
 

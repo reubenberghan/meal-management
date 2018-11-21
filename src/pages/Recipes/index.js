@@ -5,14 +5,12 @@ import Footer from '../../components/Layout/Footer'
 import Header from '../../components/Layout/Header'
 import Main from '../../components/Layout/Main'
 import RecipeList from '../../components/RecipeList'
-import AddRecipe from '../../components/AddRecipe'
 
 export default function Recipes () {
   return (
     <Layout>
       <Header />
       <Main>
-        <AddRecipe />
         <RecipeList />
       </Main>
       <Footer />

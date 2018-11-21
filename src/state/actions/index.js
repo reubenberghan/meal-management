@@ -3,7 +3,8 @@ import {
   RECIPE_ADDED,
   RECIPE_SUBMITTED,
   STEP_CHANGED,
-  TITLE_CHANGED
+  TITLE_CHANGED,
+  TITLE_UPDATED
 } from '../constants'
 
 export function recipeAdded (recipe) {
@@ -30,6 +31,15 @@ export function ingredientChanged (ingredient) {
   }
 }
 
+export function stepChanged (step) {
+  return {
+    type: STEP_CHANGED,
+    payload: {
+      step
+    }
+  }
+}
+
 export function titleChanged (title) {
   return {
     type: TITLE_CHANGED,
@@ -39,11 +49,9 @@ export function titleChanged (title) {
   }
 }
 
-export function stepChanged (step) {
+export function titleUpdated (payload) {
   return {
-    type: STEP_CHANGED,
-    payload: {
-      step
-    }
+    type: TITLE_UPDATED,
+    payload
   }
 }

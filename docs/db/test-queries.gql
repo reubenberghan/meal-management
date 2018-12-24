@@ -1,0 +1,59 @@
+{
+  allManagedRecipes {
+    nodes {
+      id
+      name
+      ingredients
+    }
+  }
+}
+
+# mutation {
+#   createRecipe(
+#     input: {
+#       recipe: {
+#         name: "Banana Cake"
+#       }
+#     }
+#   ) {
+#     recipe {
+#       nodeId
+#       id
+#       name
+#       createdAt
+#       updatedAt
+#     }
+#   }
+# }
+
+# mutation {
+#   upsertRecipeIngredient(
+#     input: {
+#       recipeRowId: "5a0b039c-071d-11e9-8528-ab35b25a9e5e",
+#       ingredientName: "Egg"
+#     }
+#   ) {
+#     fullRecipe {
+#       name,
+#       ingredients
+#     }
+#   }
+# }
+
+# mutation {
+#   removeIngredientFromRecipe(
+#     input: {
+#       recipeRowId: "5a0b039c-071d-11e9-8528-ab35b25a9e5e",
+#       ingredientName: "egg"
+#     }
+#   ) {
+#     query {
+#       allIngredients {
+#         nodes {
+#           id
+#           name
+#         }
+#       }
+#     }
+#   }
+# }

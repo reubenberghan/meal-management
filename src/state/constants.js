@@ -4,7 +4,9 @@ export const RECIPE_SUBMITTED = '@@recipes/RECIPE_SUBMITTED'
 export const TITLE_CHANGED = '@@addRecipe/TITLE_CHANGED'
 export const TITLE_UPDATED = '@@recipes/TITLE_UPDATED'
 export const INGREDIENT_CHANGED = '@@addRecipe/INGREDIENT_CHANGED'
+export const INGREDIENT_UPDATED = '@@addRecipe/INGREDIENT_UPDATED'
 export const STEP_CHANGED = '@@addRecipe/STEP_CHANGED'
+export const STEP_UPDATED = '@@addRecipe/STEP_UPDATED'
 
 // Paths
 export const ABOUT_PATH = '/about'
